@@ -1,3 +1,4 @@
+# 前端
 node_modules
 .DS_Store
 dist
@@ -20,3 +21,5 @@ tests/**/coverage/
 *.njsproj
 *.sln
 tsconfig.tsbuildinfo
+
+# 后端
