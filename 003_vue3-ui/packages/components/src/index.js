@@ -1,11 +1,10 @@
-import type { App } from "vue";
-
 import UiButton from "./ui-button/index.vue";
 
 export default {
-  install(app: App) {
+  install(app) {
     app.component("UiButton", UiButton);
   },
 };
+
 export { UiButton };
 
