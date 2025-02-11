@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DPlayer Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+</head>
+
+<body>
+    <div id="dplayer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+    <script>
+        const dp = new DPlayer({
+            element: document.getElementById('dplayer'),
+            video: {
+                type: 'flv',
+                url: 'wss://cxvideo-ws.123cx.com/websocket/040092661024-2?deviceNo=6fd05230-a31c-11ef-b440-ef6b7d1e8a1d&dataType=0&streamType=1&token=4de53d10-af78-41cc-ae06-6f7ac30c7767&channel=2'
+            }
+        });
+    </script>
+</body>
+
+</html>
