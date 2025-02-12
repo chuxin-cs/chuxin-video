@@ -1,20 +1,34 @@
 <template>
-  <div id="root" style="width: 500px;height: 500px;"></div>
+  <div>
+    <div id="root" style="width: 500px;height: 500px;"></div>
+
+    <Video width="300px" heigh="300px" :controls="false" :src="flvSrc" />
+
+    <Video connetMethod="websocket" width="300px" heigh="300px" :controls="false" :src="wsFlvSrc" />
+
+  </div>
 </template>
 
 <script>
 import Player from 'xgplayer';
 import FlvJsPlayer from 'xgplayer-flv.js';
+import { Video } from "@chu-xin/components"
 
 export default {
+  components: { Video },
   mounted() {
     setTimeout(() => {
       this.init()
     }, 1000);
   },
+  data() {
+    return {
+      flvSrc: '',
+      wsFlvSrc: "",
+    }
+  },
   methods: {
     init() {
-    const url = `wss://cxvideo-ws.123cx.com/websocket/040092661024-2?deviceNo=6fd05230-a31c-11ef-b440-ef6b7d1e8a1d&dataType=0&streamType=1&token=b74b7188-b7e5-49b3-a017-7cf0c3142bc8&channel=2`
       const player = new FlvJsPlayer({
         id: "root",
         url,
