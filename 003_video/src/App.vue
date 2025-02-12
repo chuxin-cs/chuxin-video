@@ -14,9 +14,10 @@ export default {
   },
   methods: {
     init() {
+    const url = `wss://cxvideo-ws.123cx.com/websocket/040092661024-2?deviceNo=6fd05230-a31c-11ef-b440-ef6b7d1e8a1d&dataType=0&streamType=1&token=b74b7188-b7e5-49b3-a017-7cf0c3142bc8&channel=2`
       const player = new FlvJsPlayer({
         id: "root",
-        url: "wss://cxvideo-ws.123cx.com/websocket/040092661024-2?deviceNo=6fd05230-a31c-11ef-b440-ef6b7d1e8a1d&dataType=0&streamType=1&token=4de53d10-af78-41cc-ae06-6f7ac30c7767&channel=2",
+        url,
         fluid: true,
         autoplay: true,
         isLive: true,
