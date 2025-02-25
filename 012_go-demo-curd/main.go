@@ -1,13 +1,16 @@
 package main
 
 import (
-	"demo-crud/database"
-	"demo-crud/routers"
+	"demo-crud/core"
+	"demo-crud/global"
+	"fmt"
 )
 
 func main() {
-	// 连接数据库
-	database.Connect()
-	// routers/router 中的 package 文件中指定了 包名为 routers 所以用 routers. 调用里面的方法
-	routers.InitRouter()
+	core.Viper()
+	// 打印
+	fmt.Println("==========>", global.G_CONFIG.JWT)
+	// 暂时把数据库连接和路由初始化放这个里面
+	core.InitCore()
+
 }

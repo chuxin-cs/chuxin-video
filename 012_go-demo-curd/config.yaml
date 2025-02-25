@@ -1,0 +1,6 @@
+# jwt configuration
+jwt:
+  signing-key: qmPlus
+  expires-time: 7d
+  buffer-time: 1d
+  issuer: qmPlus
