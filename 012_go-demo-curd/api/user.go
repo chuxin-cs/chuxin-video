@@ -1,6 +1,7 @@
 package api
 
 import (
+	"demo-crud/common"
 	"demo-crud/database"
 	"demo-crud/models"
 	"errors"
@@ -18,10 +19,7 @@ func GetUsers(c *gin.Context) {
 
 	var users []models.User
 	database.DB.Find(&users)
-	c.JSON(http.StatusOK, gin.H{
-		"code": 200,
-		"data": users,
-	})
+	common.OkWithData(users, c)
 }
 
 func GetUser(c *gin.Context) {
