@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"demo-crud/handlers"
+	"demo-crud/api"
 	"github.com/gin-gonic/gin"
 )
 
@@ -10,11 +10,11 @@ func InitRouter() *gin.Engine {
 	user := router.Group("/user")
 	{
 		// 获取用户列表
-		user.GET("/", handlers.GetUsers)
+		user.GET("/", api.GetUsers)
 		// 获取单个用户
-		user.GET("/:id", handlers.GetUser)
+		user.GET("/info/:id", api.GetUser)
 		// 本来是post请求 但是为了好验证就先走get了
-		user.POST("/add", handlers.CreateUsers)
+		user.POST("/", api.CreateUsers)
 	}
 
 	// 类似 Express 的 app.listen()
