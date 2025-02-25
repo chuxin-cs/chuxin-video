@@ -7,6 +7,7 @@ import (
 
 func InitRouter() *gin.Engine {
 	router := gin.New()
+
 	user := router.Group("/user")
 	{
 		// 获取用户列表
