@@ -1,9 +1,10 @@
+import {RouterProvider} from "react-router-dom";
+import router from "./router/Router.tsx";
+
 function App() {
-  return (
-    <>
-      <h1>Vite + React</h1>
+    return <>
+        <RouterProvider router={router}/>
     </>
-  )
 }
 
-export default App
+export default App;
