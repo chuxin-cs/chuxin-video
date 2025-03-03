@@ -1,4 +1,5 @@
 import type {AppRouteObject} from "#/router.ts";
+
 const {VITE_APP_HOMEPAGE: HOMEPAGE} = import.meta.env;
 import {createHashRouter, RouterProvider, Navigate, type RouteObject} from "react-router-dom"
 
@@ -18,6 +19,7 @@ function Router() {
         ),
         children: [
             {index: true, element: <Navigate to={HOMEPAGE} replace/>},
+            {path: "about", element: <div>about</div>}
         ]
     }
     const routes = [PROTECTED_ROUTE, ERROR_ROUTE] as RouteObject[];

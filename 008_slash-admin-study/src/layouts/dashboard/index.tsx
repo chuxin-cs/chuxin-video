@@ -1,5 +1,7 @@
+import {Outlet} from "react-router-dom"
+
 function DashboardLayout() {
-    return <>111111</>
+    return <Outlet></Outlet>
 }
 
 export default DashboardLayout
