@@ -5,8 +5,25 @@ import {createHashRouter, RouterProvider, Navigate, type RouteObject} from "reac
 
 // 不需要任何权限就可以访问的 403、404、500 页面
 import DashboardLayout from "@/layouts/dashboard";
+import Login from "@/pages/sys/login/Login";
 import ProtectedRoute from "@/router/components/protected-route";
-import {ERROR_ROUTE} from "@/router/routes/error-routes.tsx";
+import {ERROR_ROUTE} from "@/router/routes/error-routes";
+import PageError from "@/pages/sys/error/PageError";
+import {ErrorBoundary} from "react-error-boundary";
+
+
+const PUBLIC_ROUTE: AppRouteObject = {
+    path: "/login",
+    element: (
+        <ErrorBoundary FallbackComponent={PageError}>
+            <Login/>
+        </ErrorBoundary>
+    ),
+};
+const NO_MATCHED_ROUTE: AppRouteObject = {
+    path: "*",
+    element: <Navigate to="/404" replace/>,
+};
 
 function Router() {
     // 未来的业务路由
@@ -22,7 +39,7 @@ function Router() {
             {path: "about", element: <div>about</div>}
         ]
     }
-    const routes = [PROTECTED_ROUTE, ERROR_ROUTE] as RouteObject[];
+    const routes = [PUBLIC_ROUTE, NO_MATCHED_ROUTE, PROTECTED_ROUTE, ERROR_ROUTE] as RouteObject[];
     const router = createHashRouter(routes)
     return <RouterProvider router={router}/>
 }

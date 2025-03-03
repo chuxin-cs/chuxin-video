@@ -22,6 +22,7 @@
     "nprogress": "^0.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-error-boundary": "^5.0.0",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.30.0",
     "react-use": "^17.6.0",
