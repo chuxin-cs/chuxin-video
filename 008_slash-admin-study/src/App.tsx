@@ -1,6 +1,8 @@
+import Router from "@/router/index";
+
 function App() {
     return (
-        <>111</>
+        <Router></Router>
     )
 }
 

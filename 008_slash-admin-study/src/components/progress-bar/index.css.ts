@@ -2,7 +2,8 @@ import {themeVars} from "@/theme/theme.css"
 import { globalStyle } from "@vanilla-extract/css";
 
 globalStyle("#nprogress .bar", {
-    background: themeVars.colors.palette.primary.default,
+    // background: themeVars.colors.palette.primary.default || "#000",
+    background: "#000",
     boxShadow: `0 0 2px ${themeVars.colors.palette.primary.default}`,
 })
 
