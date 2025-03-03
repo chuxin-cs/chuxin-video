@@ -1,6 +1,7 @@
 import {useEffect} from "react";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css"
+import "./index.css";
 
 //配置 NProgress
 NProgress.configure({
