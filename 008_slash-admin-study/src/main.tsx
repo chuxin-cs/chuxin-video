@@ -4,6 +4,8 @@ import {createRoot} from 'react-dom/client'
 
 // helmet
 import {HelmetProvider} from "react-helmet-async"
+// mock api
+// import worker from "./_mock";
 // 引入全局css
 import "./global.css"
 import "./theme/theme.css"
@@ -26,3 +28,6 @@ root.render(
         </Suspense>
     </HelmetProvider>
 )
+
+// 🥵 start service worker mock in development mode
+// worker.start({onUnhandledRequest: "bypass"});
