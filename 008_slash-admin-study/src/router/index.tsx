@@ -1,15 +1,16 @@
+import {lazy} from "react";
 import type {AppRouteObject} from "#/router.ts";
-
-const {VITE_APP_HOMEPAGE: HOMEPAGE} = import.meta.env;
+import {ErrorBoundary} from "react-error-boundary";
 import {createHashRouter, RouterProvider, Navigate, type RouteObject} from "react-router-dom"
 
+const {VITE_APP_HOMEPAGE: HOMEPAGE} = import.meta.env;
+
 // 不需要任何权限就可以访问的 403、404、500 页面
-import DashboardLayout from "@/layouts/dashboard";
 import Login from "@/pages/sys/login/Login";
-import ProtectedRoute from "@/router/components/protected-route";
-import {ERROR_ROUTE} from "@/router/routes/error-routes";
+import DashboardLayout from "@/layouts/dashboard";
 import PageError from "@/pages/sys/error/PageError";
-import {ErrorBoundary} from "react-error-boundary";
+import {ERROR_ROUTE} from "@/router/routes/error-routes";
+import ProtectedRoute from "@/router/components/protected-route";
 
 
 const PUBLIC_ROUTE: AppRouteObject = {
@@ -25,6 +26,10 @@ const NO_MATCHED_ROUTE: AppRouteObject = {
     element: <Navigate to="/404" replace/>,
 };
 
+import About from "@/pages/about/index"
+
+const Home = lazy(() => import("@/pages/home/index"));
+
 function Router() {
     // 未来的业务路由
     const PROTECTED_ROUTE: AppRouteObject = {
@@ -36,7 +41,8 @@ function Router() {
         ),
         children: [
             {index: true, element: <Navigate to={HOMEPAGE} replace/>},
-            {path: "about", element: <div>about</div>}
+            {path: "about", element: <About/>},
+            {path: "home", element: <Home/>}
         ]
     }
     const routes = [PUBLIC_ROUTE, NO_MATCHED_ROUTE, PROTECTED_ROUTE, ERROR_ROUTE] as RouteObject[];
