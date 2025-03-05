@@ -1,0 +1,12 @@
+.btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #1a1a1a;
+    color: white;
+}
+.active {
+    background-color: #0044ff;
+}
+.disabled {
+    background-color: #aaaaaa;
+}
