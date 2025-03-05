@@ -13,7 +13,7 @@ function DashboardLayout() {
     return (
         <Layout className={layoutClassName}>
             <Suspense fallback={<CircleLoading/>}>
-                <Layout style={{}}>
+                <Layout>
                     <Header/>
                     <Nav/>
                     <Main/>
