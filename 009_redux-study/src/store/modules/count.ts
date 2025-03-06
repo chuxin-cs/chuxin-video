@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit"
 
 // 定义状态类型
-interface CountState {
+export interface CountState {
     count: number;
 }
 
