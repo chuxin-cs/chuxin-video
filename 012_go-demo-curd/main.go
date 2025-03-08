@@ -12,5 +12,6 @@ func main() {
 	fmt.Println("==========>", global.G_CONFIG.JWT)
 	// 暂时把数据库连接和路由初始化放这个里面
 	core.InitCore()
-
+	// ====
+	core.ReadConfig()
 }
